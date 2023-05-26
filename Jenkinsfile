@@ -35,6 +35,7 @@ pipeline {
             steps {
                 sh 'docker image build -t spc .'
                 sh 'docker tag spc springpet2023.azurecr.io/spc:latest'
+                sh 'az acr login --name springpet2023'
                 sh 'docker image push springpet2023.azurecr.io/spc:latest'
             }
         }
