@@ -36,6 +36,9 @@ pipeline {
                 sh 'docker image build -t spc .'
                 sh 'docker tag spc springpet2023.azurecr.io/spc:latest'
                 sh 'az acr login --name springpet2023'
+                sh 'kubectl create secret generic regcred \
+                    --from-file=.dockerconfigjson=$HOME/.docker/config.json \
+                    --type=kubernetes.io/dockerconfigjson' 
                 sh 'docker image push springpet2023.azurecr.io/spc:latest'
             }
         }
