@@ -1,13 +1,13 @@
 pipeline {
     agent { label 'Node' }
     triggers {
-       pollSCM('* * * * *')
+       pollSCM('0 23 * * 1-5')
     }
     stages {
         stage('vcs') {
             steps {
                 git url: 'https://github.com/March2023Sujata/spc-terraform-acr.git',
-                    branch: 'main'
+                    branch: 'release'
             }
         }
         stage('build') {
