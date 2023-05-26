@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('vcs') {
             steps {
-                git url: 'https://github.com/March2023Sujata/spring-petclinic.git',
+                git url: 'https://github.com/March2023Sujata/spc-terraform-acr.git',
                     branch: 'main'
             }
         }
