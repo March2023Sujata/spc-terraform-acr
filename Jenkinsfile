@@ -33,8 +33,9 @@ pipeline {
 		}
         stage('docker') {
             steps {
-                sh 'docker image build -t sujatajoshi/spc:latest .'
-                sh 'docker image push sujatajoshi/spc:latest'
+                sh 'docker image build -t spc .'
+                sh 'docker tag spc springpet2023.azurecr.io/spc:latest'
+                sh 'docker image push springpet2023.azurecr.io/spc:latest'
             }
         }
         stage('deploy') {

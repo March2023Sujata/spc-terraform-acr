@@ -37,6 +37,8 @@ spec:
     spec:
       containers:
         - name: spc
-          image: sujatajoshi/spc
+          image: springpet2023.azurecr.io/spc:latest
           ports:
             - containerPort: 8080
+      imagePullSecrets:
+        - name: regcred
