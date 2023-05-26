@@ -7,7 +7,7 @@ pipeline {
         stage('vcs') {
             steps {
                 git url: 'https://github.com/March2023Sujata/spc-terraform-acr.git',
-                    branch: 'main'
+                    branch: 'develop'
             }
         }
         stage('build') {
